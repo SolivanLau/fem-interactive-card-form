@@ -1,0 +1,10 @@
+// REM FUNCTION
+
+@function rem($size) {
+    @if (type-of($size) == number) {
+        $remSize: $size / 16px;
+        @return #{$remSize}rem;
+    } @else {
+        @warn "The rem function accepts only numbers.";
+    }
+}

@@ -1,13 +1,62 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frontend Mentor | Interactive Card Details Form</title>
-  </head>
-  <body>
-    <h1>Hi</h1>
-    <script type="module" src="/src/script.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Frontend Mentor | Interactive Card Details Form</title>
+    </head>
+    <body>
+        <!-- MAIN CONTENT -->
+        <main class="main">
+            <!-- CARD BANNER -->
+            <section class="banner">
+                <!-- card container -->
+                <div class="card__container">
+                    <!-- front -->
+                    <div class="card card--front"></div>
+                    <!-- back -->
+                    <div class="card card--back"></div>
+                </div>
+            </section>
+
+            <!-- FORM -->
+            <form action="#" class="form">
+                <!-- wrapper -->
+                <div class="wrapper">
+                    <!-- Name -->
+                    <div>
+                        <label for="name">Cardholder Name</label>
+                        <input type="text" name="name" />
+                        <p class="response"></p>
+                    </div>
+                    <!-- Card Number -->
+                    <div>
+                        <label for="">Card Number</label>
+                        <input type="number" />
+                        <p class="response"></p>
+                    </div>
+
+                    <!-- Expiry Date & CVC -->
+                    <div>
+                        <!-- Expiry Date -->
+                        <div>
+                            <label for=""></label>
+                            <input type="text" />
+                            <p class="response"></p>
+                        </div>
+                        <!-- CVC -->
+                        <div>
+                            <label for=""></label>
+                            <input type="number" />
+                            <p class="response"></p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </main>
+
+        <!-- SCRIPT -->
+        <script type="module" src="/src/script.js"></script>
+    </body>
 </html>
