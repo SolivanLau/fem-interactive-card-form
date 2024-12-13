@@ -34,41 +34,80 @@ img {
 }
 
 .banner {
-    --_min-height: 30;
+    --_max-height: 30;
     padding-block: rem(28);
-    min-height: calc(var(--_min-height) * 1vh);
-    min-height: calc(var(--_min-height) * 1dvh);
+    max-height: calc(var(--_max-height) * 1vh);
+    max-height: calc(var(--_max-height) * 1dvh);
+
+    @include responsive(laptop) {
+        --_max-height: 100;
+    }
 }
 // CARD Component
-.card {
-    width: 260px;
-    max-width: 100%;
-    aspect-ratio: 447/245;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 150%);
-}
 
 .card__container {
     position: relative;
+    top: 35%;
+    width: 260px;
+
+    @include responsive(500) {
+        top: 20%;
+        width: 290px;
+    }
+
+    @include responsive(laptop) {
+        left: 34%;
+    }
+    @include responsive(1150) {
+        left: 50%;
+        width: 310px;
+    }
+
+    @include responsive(1300) {
+        width: 360px;
+    }
 }
 
+.card {
+    --_x-offset: 0;
+    --_y-offset: 0;
+    width: 100%;
+    aspect-ratio: 447/245;
+
+    transform: translateY(calc(var(--_y-offset) * 1%))
+        translateX(calc(var(--_x-offset) * 1%));
+}
 .card--front {
+    --_x-offset: -10;
+    --_y-offset: 60;
     z-index: 2;
+
+    @include responsive(laptop) {
+        --_y-offset: -10;
+        --_x-offset: -15;
+    }
 }
 .card--back {
+    --_x-offset: 10;
+    --_y-offset: -100;
     z-index: 1;
-    translate: 10% -60%;
+    @include responsive(laptop) {
+        --_y-offset: 0;
+        --_x-offset: 15;
+    }
 }
 
 // FORM
 .form {
-    margin-block: 3rem;
+    margin-block: 6rem 3rem;
 }
 
 .form__wrapper {
     max-width: 500px;
+
+    @include responsive(laptop) {
+        max-width: 380px;
+    }
 }
 
 // LAYOUTS
