@@ -1,0 +1,29 @@
+@use "../abstract/functions" as *;
+:root {
+    // COLORS
+
+    // Primary
+
+    // Neutral
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-light-gray-violet: hsl(270, 3%, 87%);
+    --clr-dark-gray-violet: hsl(279, 6%, 55%);
+    --clr-dark-violet: hsl(278, 68%, 11%);
+    --clr-red: hsl(0, 100%, 66%);
+    // Gradients
+    --clr-grad-primary: linear-gradient(
+        to right,
+        hsl(249, 99%, 64%),
+        hsl(278, 94%, 30%)
+    );
+    // FONTS
+    // family
+    --fm-body: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    // size
+    --fs-200: #{rem(12)};
+    --fs-300: #{rem(14)};
+    --fs-400: #{rem(18)};
+    // BORDER
+    --br-radius: #{rem(6)};
+}

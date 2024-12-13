@@ -1,0 +1,58 @@
+@use "../abstract/functions" as *;
+// WRAPPER CLASS: container class
+.wrapper {
+    --_wrapper-max-width: 1200px;
+    --_wrapper-gutters: #{rem(40)};
+    margin-inline: auto;
+    width: min(100% - var(--_wrapper-gutters), var(--_wrapper-max-width));
+}
+
+// SCREEN READER ONLY: hidden class
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+// PERFORMANT BACKGROUND IMAGE
+.background-container {
+    position: relative;
+}
+
+.background-container__image,
+.background-container__image > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+// GRID UTILITIES
+.grid {
+    display: grid;
+}
+
+.grid--half {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--third {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--fourth {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+// FLEX UTILITIES
+.flex {
+    display: flex;
+}

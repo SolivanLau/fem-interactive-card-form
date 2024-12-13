@@ -10,47 +10,126 @@
         <!-- MAIN CONTENT -->
         <main class="main">
             <!-- CARD BANNER -->
-            <section class="banner">
+            <section class="banner background-container">
                 <!-- card container -->
-                <div class="card__container">
+                <div class="card__container wrapper">
                     <!-- front -->
-                    <div class="card card--front"></div>
+                    <!-- <div class="card card--front background-container">
+                        <img
+                            src="./src/assets/images/bg-card-front.png"
+                            width="447"
+                            height="245"
+                            alt="credit card front"
+                            class="background-container card__background"
+                        />
+                    </div> -->
                     <!-- back -->
-                    <div class="card card--back"></div>
+                    <!-- <div class="card card--back background-container">
+                        <img
+                            src="./src/assets/images/bg-card-back.png"
+                            width="447"
+                            height="245"
+                            alt="credit card back"
+                            class="background-container card__background"
+                        />
+                    </div> -->
                 </div>
+
+                <!-- background image -->
+                <picture class="background-container__image">
+                    <source
+                        media="(min-width:1024px )"
+                        srcset="./src/assets/images/bg-main-desktop.png"
+                    />
+                    <img
+                        src="./src/assets/images/bg-main-mobile.png"
+                        alt="credit card banner background"
+                    />
+                </picture>
             </section>
 
             <!-- FORM -->
-            <form action="#" class="form">
+            <form action="#" method="post" id="credit-form" class="form">
                 <!-- wrapper -->
-                <div class="wrapper">
+                <div class="wrapper form__wrapper">
                     <!-- Name -->
-                    <div>
-                        <label for="name">Cardholder Name</label>
-                        <input type="text" name="name" />
-                        <p class="response"></p>
+                    <div class="form__group">
+                        <label for="name" class="form__label">
+                            Cardholder Name
+                        </label>
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            placeholder="e.g. Jane Appleseed"
+                            class="form__input"
+                        />
+                        <p class="form__response"></p>
                     </div>
                     <!-- Card Number -->
-                    <div>
-                        <label for="">Card Number</label>
-                        <input type="number" />
-                        <p class="response"></p>
+                    <div class="form__group">
+                        <label for="card-number" class="form__label"
+                            >Card Number</label
+                        >
+                        <input
+                            type="number"
+                            placeholder="e.g. 1234 5678 9123 0000"
+                            class="form__input"
+                            name="card-number"
+                            id="card-number"
+                        />
+                        <p class="form__response"></p>
                     </div>
 
                     <!-- Expiry Date & CVC -->
-                    <div>
+                    <div class="form__group form__group--side-by-side">
                         <!-- Expiry Date -->
-                        <div>
-                            <label for=""></label>
-                            <input type="text" />
-                            <p class="response"></p>
-                        </div>
+                        <fieldset class="form__group">
+                            <legend class="form__label">
+                                Exp. Date (MM/YY)
+                            </legend>
+
+                            <div class="form__group form__group--side-by-side">
+                                <input
+                                    type="number"
+                                    name="exp-month"
+                                    class="form__input"
+                                    placeholder="MM"
+                                    maxlength="2"
+                                />
+                                <input
+                                    type="number"
+                                    name="exp-year"
+                                    class="form__input"
+                                    placeholder="YY"
+                                    maxlength="2"
+                                />
+                            </div>
+                            <p class="form__response"></p>
+                        </fieldset>
                         <!-- CVC -->
-                        <div>
-                            <label for=""></label>
-                            <input type="number" />
-                            <p class="response"></p>
+                        <div class="form__group">
+                            <!-- label -->
+                            <label for="cvc" class="form__label">Cvc</label>
+                            <!-- input -->
+                            <input
+                                type="number"
+                                class="form__input"
+                                name="cvc"
+                                id="cvc"
+                                placeholder="e.g. 123"
+                                maxlength="3"
+                            />
+                            <!-- response -->
+                            <p class="form__response"></p>
                         </div>
+                    </div>
+
+                    <div class="form__group">
+                        <!-- Submit Button -->
+                        <button type="submit" class="button form__button">
+                            Confirm
+                        </button>
                     </div>
                 </div>
             </form>

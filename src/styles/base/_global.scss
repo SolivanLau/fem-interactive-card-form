@@ -1,3 +1,126 @@
-h1 {
-  color: green;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+// img reset
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.button {
+    cursor: pointer;
+    border: none;
+    border-radius: var(--br-radius);
+}
+
+// PAGE SPECIFICS
+
+// MAIN CONTENT
+.main {
+    display: grid;
+
+    @include responsive(laptop) {
+        --_sidebar-width: 25;
+        grid-template-columns: calc(var(--_sidebar-width) * 1vw) 1fr;
+        grid-template-columns: calc(var(--_sidebar-width) * 1dvw) 1fr;
+
+        min-height: 100vh;
+        min-height: 100dvh;
+
+        .form {
+            align-self: center;
+        }
+    }
+}
+
+.banner {
+    --_min-height: 30;
+    padding-block: rem(28);
+    min-height: calc(var(--_min-height) * 1vh);
+    min-height: calc(var(--_min-height) * 1dvh);
+}
+// CARD Component
+.card {
+    width: 260px;
+    max-width: 100%;
+    aspect-ratio: 447/245;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 150%);
+}
+
+.card__container {
+    position: relative;
+}
+
+.card--front {
+    z-index: 2;
+}
+.card--back {
+    z-index: 1;
+    translate: 10% -60%;
+}
+
+// FORM
+.form {
+    margin-block: 3rem;
+}
+
+.form__wrapper {
+    max-width: 500px;
+}
+
+// LAYOUTS
+.form__group {
+    display: grid;
+    gap: 0.5rem;
+}
+.form__group--side-by-side {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+// LABEL & INPUT
+.form__label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: var(--fs-200);
+    color: var(--clr-dark-violet);
+}
+
+.form__input {
+    border: 1px solid var(--clr-light-gray-violet);
+    padding: 0.5rem 1rem;
+    border-radius: var(--br-radius);
+    font-size: var(--fs-400);
+    color: var(--clr-dark-violet);
+
+    &::placeholder {
+        color: var(--clr-light-gray-violet);
+    }
+
+    // STATES
+    &:focus-visible {
+        outline-color: var(--clr-grad-primary);
+    }
+    &:user-invalid {
+        border-color: var(--clr-red);
+    }
+}
+.form__response {
+    margin-block: rem(10);
+    color: var(--clr-red);
+    font-size: var(--fs-200);
+    min-height: 14px;
+}
+// BUTTON
+.form__button {
+    background: var(--clr-dark-violet);
+    color: var(--clr-white);
+    padding: rem(16) rem(32);
+
+    &:focus-visible {
+        outline-color: var(--clr-grad-primary);
+    }
 }

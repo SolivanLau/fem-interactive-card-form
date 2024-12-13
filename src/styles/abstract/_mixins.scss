@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "sass:meta";
 @use "./functions" as *;
 // RESPONSIVE MEDIA QUERIES
 // // Mobile first approach. This Mixin Should be used after initial styles.
@@ -10,20 +12,20 @@ $breakpoints: (
 
 @mixin responsive($breakpoint) {
     // number
-    @if type-of($breakpoint) == number {
+    @if meta.type-of($breakpoint) == number {
         @media screen and (min-width: rem($breakpoint)) {
             @content;
         }
     }
 
     // keyword
-    @if type-of($breakpoint) == string {
-        @if map-has-key($breakpoints, $breakpoint) {
-            @media screen and (min-width: rem(map-get($breakpoints, $breakpoint))) {
+    @if meta.type-of($breakpoint) == string {
+        @if map.has-key($breakpoints, $breakpoint) {
+            @media screen and (min-width: rem(map.get($breakpoints, $breakpoint))) {
                 @content;
             }
         } @else {
-            @warn "An unknown breakpoint keyword: `#{$breakpoint}` is used. Available keywordbreakpoints are: #{map-keys($breakpoints)} ";
+            @warn "An unknown breakpoint keyword: `#{$breakpoint}` is used. Available keyword breakpoints are: #{map-keys($breakpoints)} ";
         }
     }
 }

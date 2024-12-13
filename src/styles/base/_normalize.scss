@@ -187,3 +187,24 @@ template {
 [hidden] {
     display: none;
 }
+
+// END OF NORMALIZE
+
+// FORM INPUTS
+
+input,
+label,
+textarea {
+    min-width: 0;
+    font-family: inherit;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    margin-bottom: 0.5rem;
+}
