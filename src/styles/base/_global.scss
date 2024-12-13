@@ -11,6 +11,7 @@ img {
     cursor: pointer;
     border: none;
     border-radius: var(--br-radius);
+    font-family: inherit;
 }
 
 // PAGE SPECIFICS
@@ -56,15 +57,22 @@ img {
     }
 
     @include responsive(laptop) {
+        top: 25%;
         left: 34%;
     }
     @include responsive(1150) {
+        top: 20%;
         left: 50%;
         width: 310px;
     }
 
     @include responsive(1300) {
         width: 360px;
+    }
+
+    @include responsive(desktop) {
+        left: 40%;
+        width: 400px;
     }
 }
 
@@ -97,6 +105,74 @@ img {
     }
 }
 
+.card__text {
+    margin: 0;
+    color: var(--clr-white);
+    position: absolute;
+    font-size: var(--fs-200);
+
+    @include responsive(1150) {
+        font-size: var(--fs-300);
+    }
+}
+
+// CARD LOGO & TEXT
+// card--front text
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    top: 10%;
+    left: 6%;
+}
+
+.logo_circle {
+    --_size: 0;
+    border: 1px solid var(--clr-white);
+    border-radius: 50%;
+    width: calc(var(--_size) * 1px);
+    height: calc(var(--_size) * 1px);
+
+    &:first-child {
+        --_size: 28;
+        background-color: var(--clr-white);
+    }
+
+    &:last-child {
+        --_size: 12;
+    }
+}
+.card__text--front {
+}
+.card__text--card-number {
+    top: 63%;
+    left: 6%;
+    letter-spacing: 2px;
+    font-size: var(--fs-300);
+
+    @include responsive(1150) {
+        font-size: var(--fs-400);
+        font-size: 22px;
+    }
+}
+
+.card__text--name {
+    bottom: 10%;
+    left: 6%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    max-width: 70%;
+}
+
+.card__text--exp {
+    bottom: 10%;
+    right: 6%;
+}
+// card--back text
+.card__text--cvc {
+    top: 45%;
+    right: 11%;
+}
 // FORM
 .form {
     margin-block: 6rem 3rem;
