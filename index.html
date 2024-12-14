@@ -94,8 +94,10 @@
                             >Card Number</label
                         >
                         <input
-                            type="number"
+                            type="text"
                             placeholder="e.g. 1234 5678 9123 0000"
+                            inputmode="numeric"
+                            pattern="[0-9\s]*"
                             class="form__input"
                             name="card-number"
                             id="card-number"
@@ -113,18 +115,22 @@
 
                             <div class="form__group form__group--side-by-side">
                                 <input
-                                    type="number"
+                                    type="text"
                                     name="exp-month"
+                                    id="exp-month"
                                     class="form__input"
                                     placeholder="MM"
                                     maxlength="2"
+                                    pattern="[0-9]*"
                                 />
                                 <input
-                                    type="number"
+                                    type="text"
                                     name="exp-year"
+                                    id="exp-year"
                                     class="form__input"
                                     placeholder="YY"
                                     maxlength="2"
+                                    pattern="[0-9]*"
                                 />
                             </div>
                             <p class="form__response"></p>
@@ -135,11 +141,12 @@
                             <label for="cvc" class="form__label">Cvc</label>
                             <!-- input -->
                             <input
-                                type="number"
+                                type="text"
                                 class="form__input"
                                 name="cvc"
                                 id="cvc"
                                 placeholder="e.g. 123"
+                                pattern="[0-9]*"
                                 maxlength="3"
                             />
                             <!-- response -->
